@@ -21,7 +21,7 @@ function startGame() {
         button.innerHTML = letter;
         button.setAttribute("data-letter", letter);
         button.setAttribute("id", letter);
-        button.setAttribute("class", "btn btn-primary btn-sm");
+        button.setAttribute("class", "btn btn-primary btn-lg");
         button.addEventListener("click", buttonClicked, false)
         p.appendChild(button);
         if(i == 74 || i == 74 || i == 90) {

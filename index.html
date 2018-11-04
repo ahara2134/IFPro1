@@ -6,30 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="l3.css">
-    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-auth.js"></script>
     <script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyCGOuHRYnh2vtFSvza_-3Lp2_ohvHU9fkY",
-        authDomain: "sofdev-e98ff.firebaseapp.com",
-        databaseURL: "https://sofdev-e98ff.firebaseio.com",
-        projectId: "sofdev-e98ff",
-        storageBucket: "sofdev-e98ff.appspot.com",
-        messagingSenderId: "130399599353"
-    };
-    firebase.initializeApp(config);
-    </script>
+            // Initialize Firebase
+            var config = {
+              apiKey: "AIzaSyC0nc7A0ZAlUXvSuT_DP2PyFfNv-db8QMc",
+              authDomain: "sfp2-bc1b5.firebaseapp.com",
+              databaseURL: "https://sfp2-bc1b5.firebaseio.com",
+              projectId: "sfp2-bc1b5",
+              storageBucket: "sfp2-bc1b5.appspot.com",
+              messagingSenderId: "257222939567"
+            };
+            firebase.initializeApp(config);
+          </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body onload="startGame()">
-<div id="buttonHolder"></div>
-<div id="wordHolder"></div>
-<div id="defHolder"></div>
-<div id="scoreHolder">Score: <span id=scoreNum>0</span></span></div>
-<div id="chancesHolder">Chances: <span id=chanceNum>7</span></span></div>
-<div id="message"></div>
-<button id="reset" class="btn btn-primary btn-sm" onclick="resetClicked()">Reset</button>
+<body>
+    <form name="login_form">
+        <div class="form-group">
+            <label for="usr">Name:</label>
+            <input type="text" class="form-control" id="usr" name="name_login">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" name="pw_login">
+        </div>
+        <button id="login_submit" class="btn btn-primary btn-lg" onclick="attempt_login()">Login</button>
+    </form> 
+    <a href="Register.html"><button id="to_register" class="btn btn-primary btn-lg" >Register</button></a>
+
 </body>
 
 <script src="model.js"></script>
