@@ -1,5 +1,5 @@
-wordList = ["tattoo", "electricity", "rabbit", "dewlap", "binky", "hare", "cat", "dog", "beetle", "cockroach"];
-wordDef = ["A form of body modification where a design is made by inserting ink.",
+wordList    = ["tattoo", "electricity", "rabbit", "dewlap", "binky", "hare", "cat", "dog", "beetle", "cockroach"];
+wordDef     = ["A form of body modification where a design is made by inserting ink.",
     "The set of physical phenomena associated with the presence and motion of electric charge.",
     "a burrowing, gregarious, plant-eating mammal with long ears, long hind legs, and a short tail.",
     "a fold of loose skin hanging from the neck or throat of a rabbit.",
@@ -15,8 +15,8 @@ var chances = 7;
 // Check if the letter is in the gameWord. 
 function checkLetter(x) {
     var indexNums;
-    var indexArrCount = 0;
-    counter = 0;
+    var indexArrCount   = 0;
+    counter             = 0;
     for(var i = 0; i < gameWord.length; i++) {
         if(gameWord.charAt(i) == x) {
             counter++;
@@ -41,12 +41,7 @@ function checkLetter(x) {
 //pick a random word from the "dictionary"
 function generateWord() {
     console.log("generateWord");
-    x = Math.floor((Math.random() * 10));
-    gameWord = wordList[x]
+    x           = Math.floor((Math.random() * 10));
+    gameWord    = wordList[x]
     createWordView(wordList[x], wordDef[x]);
-};
-
-function updateChance(num) {
-    chances = 7;
-    resetChance();
 };

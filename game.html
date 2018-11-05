@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="l3.css">
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-auth.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC0nc7A0ZAlUXvSuT_DP2PyFfNv-db8QMc",
+            authDomain: "sfp2-bc1b5.firebaseapp.com",
+            databaseURL: "https://sfp2-bc1b5.firebaseio.com",
+            projectId: "sfp2-bc1b5",
+            storageBucket: "sfp2-bc1b5.appspot.com",
+            messagingSenderId: "257222939567"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body onload="startGame()">
+<div id="buttonHolder"></div>
+<div id="wordHolder"></div>
+<div id="defHolder"></div>
+<div id="scoreHolder">Score: <span id=scoreNum>0</span></span></div>
+<div id="chancesHolder">Chances: <span id=chanceNum>7</span></span></div>
+<div id="message"></div>
+<button id="reset" class="btn btn-primary btn-lg" onclick="resetClicked()">Reset</button>
+</body>
+
+<script src="model.js"></script>
+<script src="view.js"></script>
+<script src="controller.js"></script>
+</html>
