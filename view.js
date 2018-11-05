@@ -13,8 +13,6 @@ const btnLogout         = document.getElementById('btnLogout');
 const authmsg           = document.getElementById('authmessage');
 const gameContent       = document.getElementById('gamecontent');
 
-
-
 // Creates buttons A-Z 
 function startGame() {
     var letter, button, p, container;

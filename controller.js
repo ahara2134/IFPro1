@@ -57,7 +57,32 @@ function load_auth() {
                   gameContent.style.display     = "none";
               }
           });
-    };
+
+        // Get Elements
+        const boardPosition     = document.getElementsByClassName('position');
+        const boardName         = document.getElementsByClassName('boardname');
+        const boardScore        = document.getElementsByClassName('boardscore');
+
+        // Get Elements
+        const dbRefObject = firebase.database().ref();
+        dbRefObject.once('value', function(snapshot) {
+                snapshot.forEach(function(childSnapshot) {
+                        childSnapshot.forEach(function(grandSnapshot) {
+                                var childPos    = childSnapshot.key;
+                                var grandKey    = grandSnapshot.key;
+                                var grandData   = grandSnapshot.val();
+                                var index = childPos - 1;
+                                console.log(index);
+                                boardPosition[index].innerHTML = childPos;
+                                boardName[index].innerHTML = grandKey;
+                                boardScore[index].innerHTML = grandData;
+
+                                console.log(childPos+ "|| "+grandKey+"|| "+grandData);
+                        })
+                        
+                })
+        })
+};
 
     // Disables button once the word bank is updated
 function buttonClicked() {
