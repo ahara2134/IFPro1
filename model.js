@@ -13,7 +13,7 @@ var gameWord;
 var chances = 7;
 
 // Check if the letter is in the gameWord. 
-function checkLetter(x) {
+function checkLetter(x, score) {
     var indexNums;
     var indexArrCount   = 0;
     counter             = 0;
@@ -28,7 +28,7 @@ function checkLetter(x) {
         increaseScore(counter);
     } else {
         if(chances == 1) {
-            gameOver();
+            gameOver(score);
         } else {
             chances--;
             retractCongrats();
@@ -40,7 +40,6 @@ function checkLetter(x) {
 
 //pick a random word from the "dictionary"
 function generateWord() {
-    console.log("generateWord");
     x           = Math.floor((Math.random() * 10));
     gameWord    = wordList[x]
     createWordView(wordList[x], wordDef[x]);
