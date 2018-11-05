@@ -99,12 +99,22 @@ function retractCongrats() {
 };
 
 // Replace div contents with "GAME OVER", prevent further advancement
-function gameOver() {
+function gameOver(score) {
     msgHolder.innerHTML     = "GAME OVER.";
     chanceHolder.innerHTML = 0;
     container = document.getElementById("buttonHolder");
     container.innerHTML     = " ";
     wordHolder.innerHTML    = " ";
     defHolder.innerHTML     = " ";
+    if(currentScore > score) {
+        offerLeadershipBoard();
+    }
 
 };
+
+function offerLeadershipBoard() {
+    textName = document.getElementById("txtUName");
+    btnSave = document.getElementById("btnSave");
+    textName.classList.remove('hide');
+    btnSave.classList.remove('hide');
+}

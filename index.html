@@ -55,7 +55,16 @@
             <div id="scoreHolder">Score: <span id=scoreNum>0</span></span></div>
             <div id="chancesHolder">Chances: <span id=chanceNum>7</span></span></div>
             <div id="message"></div>
-            <button id="reset" class="btn btn-primary btn-lg" onclick="resetClicked()">Reset</button>
+            <button id="reset" class="btn btn-primary btn-lg" onclick="resetClicked()">
+                Reset
+            </button>
+    </div>
+
+    <div class="containter" id="leadershipboard">
+        <input id="txtUName" type="text" class="form-control hide" placeholder="Name for Leaderboard">
+        <button id="btnSave" class="btn btn-action hide">
+            Save
+        </button>
     </div>
     <div class="table-responsive" id="leaderboard">
         <table class="table">
