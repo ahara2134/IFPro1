@@ -1,21 +1,11 @@
-(function() {
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyC0nc7A0ZAlUXvSuT_DP2PyFfNv-db8QMc",
-            authDomain: "sfp2-bc1b5.firebaseapp.com",
-            databaseURL: "https://sfp2-bc1b5.firebaseio.com",
-            projectId: "sfp2-bc1b5",
-            storageBucket: "sfp2-bc1b5.appspot.com",
-            messagingSenderId: "257222939567"
-          };
-          firebase.initializeApp(config);
-    
+function load_auth() {  
           //Get elements
           const txtEmail = document.getElementById('txtEmail');
           const txtPassword = document.getElementById("txtPassword");
           const btnLogin = document.getElementById('btnLogin');
           const btnSignup = document.getElementById('btnSignup');
           const btnLogout = document.getElementById('btnLogout');
+          const authmsg = document.getElementById('authmessage');
     
           //Add Login event
           btnLogin.addEventListener('click', e=> {
@@ -52,12 +42,19 @@
               if(firebaseUser) {
                   console.log(firebaseUser);
                   btnLogout.classList.remove('hide');
+                  btnLogin.classList.add('hide');
+                  btnSignup.classList.add('hide');
+                  authmsg.innerHTML = "You are logged in.";
+                  startGame();
               } else {
                   console.log('not logged in');
                   btnLogout.classList.add('hide');
+                  btnLogin.classList.remove('hide');
+                  btnSignup.classList.remove('hide');
+                  authmsg.innerHTML = "Please Log in to play."
               }
           });
-    });
+    };
 
     // Disables button once the word bank is updated
 function buttonClicked() {
