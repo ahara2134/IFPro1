@@ -56,6 +56,7 @@ function load_auth() {
                   btnLogin.classList.remove('hide');
                   btnSignup.classList.remove('hide');
                   authmsg.innerHTML             = "Please Log in to play."
+                  gameOver();
                   gameContent.style.display     = "none";
               }
           });
